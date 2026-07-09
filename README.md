@@ -263,7 +263,7 @@ MSc Geoinformatics Engineering - Politecnico di Milano, Milan, Italy (Graduating
 **Target Roles:** IAM Engineer | IT Infrastructure | IT Security | Cloud Security | SOC Analyst | IT Support | Cloud Support
 
 🌐 **Portfolio:** [praveenkumar-saminathan](https://orange3456.github.io/praveenkumar-saminathan.github.io/)
-💼 **LinkedIn:** [praveen-kumar-s-993902228](https://linkedin.com/in/praveen-kumar-s-993902228)
+💼 **LinkedIn:** [praveen-kumar-s-993902228](www.linkedin.com/in/praveen-kumar-s-993902228)
 🐙 **GitHub:** [Orange3456](https://github.com/Orange3456)
 
 ---
