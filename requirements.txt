@@ -1,0 +1,90 @@
+# ============================================================
+# Active Directory Enterprise Homelab - Requirements
+# ============================================================
+# This repository documents a hands-on homelab build.
+# No code dependencies are required to use this repo.
+# The requirements below list the SOFTWARE and HARDWARE
+# needed to reproduce the lab environment.
+# ============================================================
+
+# ------------------------------------------------------------
+# HARDWARE REQUIREMENTS
+# ------------------------------------------------------------
+# Minimum:
+#   CPU    : Intel i5 or AMD Ryzen 5 (4 cores, virtualisation support)
+#   RAM    : 16 GB (lab runs 2-3 VMs simultaneously, never all 5 at once)
+#   Disk   : 100 GB free space (all VMs use thin provisioning)
+#   OS     : Windows 10/11 host (VMware Workstation requirement)
+#
+# Tested on:
+#   Dell Latitude - Intel i5 - 16 GB RAM - 512 GB SSD
+
+# ------------------------------------------------------------
+# SOFTWARE REQUIREMENTS (all free for personal/lab use)
+# ------------------------------------------------------------
+
+# Virtualisation
+VMware-Workstation-Pro>=17.0.0
+# Download: https://www.vmware.com/products/workstation-pro.html
+# Free for personal use under current VMware licensing
+
+# Virtual Machine Operating Systems
+Windows-Server-2025-Evaluation>=10.0.26100
+# Download: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2025
+# Free 180-day evaluation - no product key required
+
+Windows-11>=10.0.26100
+# Download: https://www.microsoft.com/software-download/windows11
+# Required for domain-joined client VM (Chapter 19)
+
+OPNsense>=24.1
+# Download: https://opnsense.org/download/
+# Free, open source firewall/router - no account required
+
+# ------------------------------------------------------------
+# OPTIONAL CLOUD ACCOUNTS (free tiers)
+# ------------------------------------------------------------
+
+# For hybrid identity chapters (Chapter 22-23)
+# Microsoft Azure Free Account
+# Sign up: https://azure.microsoft.com/free/
+# Includes: USD 200 credit (30 days) + free Entra ID tenant
+# Note: Card required for verification, no charge during free tier
+
+# Microsoft Entra Connect (Azure AD Connect)
+# Download from: https://entra.microsoft.com
+# Identity -> Hybrid Management -> Microsoft Entra Connect -> Connect Sync
+# Free to download and use
+
+# ------------------------------------------------------------
+# TOOLS USED (all built into Windows Server)
+# ------------------------------------------------------------
+# Active Directory Users and Computers (ADUC)
+# Group Policy Management Console (GPMC)
+# Active Directory Sites and Services
+# DNS Manager
+# DHCP Console
+# Certification Authority (AD CS)
+# Windows Server Backup
+# Event Viewer
+# ldp.exe
+# PowerShell 5.1 with ActiveDirectory module
+# repadmin, dcdiag, netdom, nltest, w32tm, auditpol
+
+# ------------------------------------------------------------
+# NETWORK CONFIGURATION
+# ------------------------------------------------------------
+# VMnet2   : 192.168.1.0/24  - Delhi HQ (Host-only, no DHCP)
+# VMnet3   : 192.168.10.0/24 - Mumbai Branch (Host-only, no DHCP)
+# VMnet8   : NAT             - WAN/Internet access for OPNsense
+
+# ------------------------------------------------------------
+# VM SPECIFICATIONS
+# ------------------------------------------------------------
+# Win2K25-DC01   : 2.5 GB RAM, 40 GB disk (thin), VMnet2
+# Win2K25-DC02   : 2.5 GB RAM, 40 GB disk (thin), VMnet2
+# Win2K25-MUMDC01: 2.5 GB RAM, 40 GB disk (thin), VMnet3
+# OPNsense-Router: 1.5 GB RAM,  8 GB disk (thin), VMnet2+VMnet3+NAT
+# Win11-Client   : 2.0 GB RAM, 40 GB disk (thin), VMnet2
+# TOTAL          : 11.0 GB RAM if all run simultaneously
+# RECOMMENDED    : Run max 3 VMs at a time (see Chapter 28)
